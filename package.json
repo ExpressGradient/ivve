@@ -1,0 +1,17 @@
+{
+  "name": "ivve",
+  "version": "0.0.1-alpha.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "dev": "./dev.js"
+  },
+  "author": "ExpressGradient",
+  "license": "MIT",
+  "dependencies": {
+    "@parcel/watcher": "^2.0.5"
+  }
+}

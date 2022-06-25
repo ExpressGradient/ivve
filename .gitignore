@@ -1,0 +1,5 @@
+.idea
+.vscode
+prettier.config.js
+
+node_modules
