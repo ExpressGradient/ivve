@@ -2,16 +2,17 @@
   "name": "ivve",
   "version": "0.0.1-alpha.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "dev": "./dev.js"
+    "dev": "src/dev.js",
+    "serve": "src/serve.js"
   },
   "author": "ExpressGradient",
   "license": "MIT",
-  "dependencies": {
+  "devDependencies": {
     "@parcel/watcher": "^2.0.5"
   }
 }
