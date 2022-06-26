@@ -15,20 +15,20 @@ server.on('request', (req, res) => {
 
     try {
         handleReq(req, res);
-    } catch (e) {
+    } catch (error) {
         if (
-            e.code === 'MODULE_NOT_FOUND' ||
-            e.message.includes('MODULE_NOT_FOUND')
+            error.code === 'MODULE_NOT_FOUND' ||
+            error.message.includes('MODULE_NOT_FOUND')
         ) {
             console.log(`${req.url} route not found!`);
             res.statusCode = 404;
-            res.end('Route not found');
+            res.end('Route Not Found!');
         } else {
-            console.error(`Error at ${req.url}!!!`, e);
+            console.error(`Error at ${req.url}!!!`, error);
             res.statusCode = 500;
-            res.end('Internal Server Error');
+            res.end('Internal Server Error!');
         }
     }
 });
 
-module.exports = { server, setRoutes };
+module.exports = { server };

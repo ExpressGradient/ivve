@@ -25,18 +25,26 @@ const generateRoutes = () => {
 };
 
 const handleReq = (req, res) => {
-    const reqURL = url.parse(req.url);
+    let urlInfo = url.parse(req.url);
+    let pathname = urlInfo.pathname;
 
     // remove trailing slash
-    if (reqURL.pathname.endsWith('/')) {
-        reqURL.pathname = reqURL.pathname.slice(0, -1);
+    if (pathname.endsWith('/')) {
+        pathname = pathname.slice(0, -1);
     }
 
     const route = routes.find((route) => {
-        return reqURL.pathname.search(new RegExp(route.regex)) !== -1;
+        return pathname.search(new RegExp(route.regex)) !== -1;
     });
 
     if (route) {
+        // Extract context from 'ivve.config.js'
+        const { context } = require(path.join(process.cwd(), 'ivve.config.js'));
+        req.context = context;
+
+        // Add parsed info into req
+        req.urlInfo = urlInfo;
+
         require(route.filePath)(req, res);
     } else throw new Error('MODULE_NOT_FOUND');
 };
