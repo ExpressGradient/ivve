@@ -1,6 +1,6 @@
 {
   "name": "ivve",
-  "version": "0.0.1-alpha.0",
+  "version": "0.0.1-alpha.1",
   "description": "",
   "main": "src/index.js",
   "scripts": {
@@ -11,8 +11,12 @@
     "serve": "src/serve.js"
   },
   "author": "ExpressGradient",
+  "readme": "https://github.com/ExpressGradient/ivve",
   "license": "MIT",
   "devDependencies": {
     "@parcel/watcher": "^2.0.5"
+  },
+  "dependencies": {
+    "directory-tree": "^3.3.0"
   }
 }
