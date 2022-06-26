@@ -2,7 +2,8 @@
 
 const path = require('path');
 const watcher = require('@parcel/watcher');
-const { server, setRouteTree } = require('./index');
+const { server } = require('./index');
+const { generateRoutes } = require('./utils');
 
 // Get port from ivve.config.js
 const { port } = require(path.join(process.cwd(), 'ivve.config.js'));
@@ -18,8 +19,8 @@ watcher
                 delete require.cache[event.path];
             });
 
-            // Set route tree again
-            setRouteTree();
+            // Set route map again
+            generateRoutes();
         } else {
             console.error('Error while watching /src!!!', err);
         }

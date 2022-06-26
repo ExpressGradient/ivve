@@ -1,7 +1,7 @@
 {
   "name": "ivve",
-  "version": "0.0.1-alpha.2",
-  "description": "",
+  "version": "0.0.1-alpha.3",
+  "description": "Node.js server with a file based router",
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
